@@ -1,0 +1,152 @@
+{
+  "name": "Rafid Hasan Sydney",
+  "email": "rafidhasansydney@gmail.com",
+  "github": "https://github.com/rafidhasansydney",
+  "facebook": "https://www.facebook.com/rafid.hasan.sydney",
+  "linkedin": null,
+  "phone": null,
+  "resume": null,
+  "projects": [
+    {
+      "slug": "bandhan",
+      "name": "Bandhan",
+      "category": "COMMUNITY & CONNECTION",
+      "summary": "A little time. A lasting bond.",
+      "description": "A community events platform that helps people find a cause, organise local gatherings and take part in something good.",
+      "image": "bandhan-desktop.jpg",
+      "imageType": "Live homepage capture",
+      "alt": "Bandhan live homepage showing its community volunteering introduction",
+      "tone": "forest",
+      "live": "https://social-events-client-cyan.vercel.app",
+      "repo": "https://github.com/rafidhasansydney/Social-Events-Client",
+      "stack": [
+        "Next.js",
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "BetterAuth",
+        "MongoDB"
+      ],
+      "features": [
+        "Browse upcoming events by cause and search by location or title.",
+        "Create and manage events with photos, dates and locations.",
+        "Sign in with Google or email, and keep joined events in one place.",
+        "Switch between light and dark themes with a saved preference."
+      ],
+      "overview": "Bandhan is built around small, practical ways to help a community. Visitors can explore local events across causes such as plantation, education, food and health. Members can organise gatherings, join events and manage their own contributions.",
+      "challenges": [
+        {
+          "title": "Authentication across two services",
+          "text": "The Next.js client connects to a separate Express API. A same-origin proxy keeps client requests and session cookies consistent, while the API checks sessions and event ownership."
+        },
+        {
+          "title": "Clear event rules",
+          "text": "Event dates must be in the future, repeat joins should not create extra participation records, and organisers should only manage their own events. Validation and ownership checks support these rules."
+        },
+        {
+          "title": "Useful feedback at every step",
+          "text": "Uploads, empty event lists and slow API responses need understandable feedback. The interface includes loading skeletons, image fallbacks, retries and empty states."
+        }
+      ],
+      "future": [
+        "Explore event reminders and calendar integration.",
+        "Add organiser moderation and reporting tools.",
+        "Improve event discovery with an optional map view."
+      ]
+    },
+    {
+      "slug": "bazardor",
+      "name": "BazarDor",
+      "category": "EVERYDAY INFORMATION",
+      "summary": "Know the price before you shop.",
+      "description": "A Bengali market-price tracker for browsing everyday products and comparing prices across markets in Bangladesh.",
+      "image": "bazardor-artwork.png",
+      "imageType": "Original project artwork",
+      "alt": "The original BazarDor illustration of a basket of fresh produce",
+      "tone": "market",
+      "live": "https://assignment07-tau.vercel.app",
+      "repo": "https://github.com/rafidhasansydney/Bazardor",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "DaisyUI",
+        "BetterAuth",
+        "Neon Postgres"
+      ],
+      "features": [
+        "Browse 33 everyday products across eight categories.",
+        "See daily price increases and decreases at a glance.",
+        "Compare minimum, maximum and average market prices when signed in.",
+        "Browse categories, sort prices and manage account information."
+      ],
+      "overview": "BazarDor brings daily market information into a Bengali interface. It organises essential products into familiar categories and highlights price changes. Signed-in visitors can look more closely at market-level prices to make informed comparisons.",
+      "challenges": [
+        {
+          "title": "Bengali prices, numeric sorting",
+          "text": "Prices are displayed in Bengali numerals, while category sorting must still compare numeric values correctly. Keeping display formatting separate from the numeric values makes this possible."
+        },
+        {
+          "title": "Reliable external data",
+          "text": "The project uses an assignment API with fallback between two hosts. Its data layer caches responses for five minutes to balance page speed and freshness."
+        },
+        {
+          "title": "Protected price details",
+          "text": "Detailed market comparisons are available to signed-in visitors. BetterAuth handles sessions, with account and profile pages connected to Neon Postgres."
+        }
+      ],
+      "future": [
+        "Explore price-history charts and longer-term trends.",
+        "Add a personal list of frequently purchased products.",
+        "Consider optional price-change alerts."
+      ]
+    },
+    {
+      "slug": "fitlog",
+      "name": "FitLog",
+      "category": "FITNESS & DAILY ROUTINES",
+      "summary": "A clearer plan for your next lift.",
+      "description": "A workout companion for exploring exercises, building a daily plan and keeping favourite workouts close at hand.",
+      "image": "fitlog-artwork.png",
+      "imageType": "Original project artwork",
+      "alt": "FitLog project artwork showing a seated exercise machine and highlighted muscles",
+      "tone": "fitness",
+      "live": "https://assignment06-ecru.vercel.app",
+      "repo": "https://github.com/rafidhasansydney/Fitlog",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Context",
+        "localStorage",
+        "Lucide"
+      ],
+      "features": [
+        "Explore a library of twelve exercises and dedicated workout details.",
+        "Build a daily plan with up to five lifts.",
+        "Save exercises for later and sort by duration, calories or rating.",
+        "Track planned exercises, time and calories, with saved local state."
+      ],
+      "overview": "FitLog keeps workout planning focused. Each exercise has its own details page with equipment, difficulty, sets, reps and instructions. Visitors can create a daily plan, bookmark exercises, mark work as done and return without losing their saved selections.",
+      "challenges": [
+        {
+          "title": "One plan, several views",
+          "text": "The workout library, saved list, navbar and daily metrics share changing state. React Context connects these views so additions and removals stay consistent."
+        },
+        {
+          "title": "Persistence in the browser",
+          "text": "Plans and bookmarks survive reloads through localStorage. The project combines local persistence with a client-side interface built on Next.js."
+        },
+        {
+          "title": "Small, clear constraints",
+          "text": "A daily plan allows up to five exercises. Buttons enforce the limit and toast messages explain actions, while sorting and live totals help visitors understand their plan."
+        }
+      ],
+      "future": [
+        "Explore a workout-history view and progress charts.",
+        "Add custom exercises and editable training plans.",
+        "Consider optional account-based sync between devices."
+      ]
+    }
+  ]
+}
