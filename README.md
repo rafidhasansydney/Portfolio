@@ -1,39 +1,48 @@
 # Rafid Hasan Sydney — Portfolio
 
-A custom, responsive portfolio with dark and light themes. Built as a dependency-free static website, with a small Node.js content generator.
+A static personal portfolio with a monochrome layout, a blue accent, light/dark themes and locally bundled GSAP motion.
 
-## Run
-
-Use Node.js 24 or later.
+## Development
 
     node build.mjs
     node verify.mjs
     node serve.mjs
 
-The preview server runs at http://127.0.0.1:4173. The deployable site is in dist/. Styles and browser JavaScript are in dist/styles.css and dist/app.js. Fonts and artwork are hosted locally. content.json holds the profile and case-study content.
+The server prints http://127.0.0.1:4173. Deploy dist/ as static assets. content.json stores confirmed profile and project information; build.mjs generates the homepage, three project pages and 404 page. Styles and browser behavior are in dist/styles.css and dist/app.js.
 
-## Confirmed profile
+## Redesign — 13 November 2026
 
-BSc in Software Engineering, Metropolitan University, Sylhet. Admission 2023, fourth year, expected graduation 2027. CGPA is intentionally omitted. No employment, internship, AI-product or automation-product claims are included. Coding agents and tool integration describe the development workflow, not standalone products.
+The previous green palette, serif headlines, decorative quotation copy and project-artwork cards were replaced. The redesign uses Manrope and IBM Plex Mono, direct biographical copy and actual website captures.
 
-## Content and images
+Motion includes GSAP masked title entrances, ScrollTrigger image/reveal motion, Flip gallery/index transitions and native cross-document view transitions where supported. Motion is reduced when the visitor requests reduced motion. Page content stays accessible when animation scripts are unavailable. GSAP 3.15.1 is bundled in dist/vendor with original copyright/license headers.
 
-Project content comes from the owner's public GitHub repositories: Social-Events-Client, Bazardor and Fitlog. Development challenges describe documented implementation considerations; future improvements are presented as possible next steps.
+## Sources and assets
 
-Bandhan uses a screenshot captured from its live homepage. BazarDor and FitLog use original artwork from their own repositories, clearly labelled as artwork. Their live links returned HTTP 200 during verification on 13 November 2026. The browser capture session stopped before those two live screenshots could be taken.
+- Bandhan: desktop screenshot from its live homepage.
+- BazarDor: actual desktop and mobile homepage captures.
+- FitLog: actual mobile homepage captures. The taller image is also a mobile viewport; it is not represented as a desktop capture.
+- Portrait: supplied ProfilePic02.png, converted to grayscale WebP with the face preserved.
 
-The supplied ProfilePic02.png is styled with CSS; the face has not been regenerated. The resume button opens a preparation notice and an email request link, as allowed by the assignment. LinkedIn has not been supplied; no guessed link is shown. The owner requested email and Facebook contact links, with no WhatsApp number. A phone number has not been supplied.
+Project descriptions and development considerations are grounded in the owner’s GitHub repositories. Future development is labelled as possible next steps. No invented employment, AI products, proficiency percentages or testimonials are included. Education: BSc in Software Engineering, Metropolitan University, 2023–2027, currently fourth year. CGPA omitted.
 
-## Visual direction
+LinkedIn and a finished résumé have not been supplied. The résumé button displays an honest preparation notice. Email and Facebook are the requested contact methods; no guessed phone or WhatsApp number is shown.
 
-Original layout using charcoal, soft green, editorial typography, a portrait composition, hover effects and scroll reveals. Motion respects reduced-motion preferences.
+## Design research
 
-References reviewed for composition and interaction ideas, without copying code:
+Primary author case studies reviewed for layout and motion principles, not copied code:
 
-- https://dennissnellenberg.com/
-- https://brittanychiang.com/
-- https://www.bruno-simon.com/
+- Joffrey Spitzer, minimalist portfolio with masked reveals and Flip transitions: https://tympanus.net/codrops/2026/02/18/joffrey-spitzer-portfolio-a-minimalist-astro-gsap-build-with-reveals-flip-transitions-and-subtle-motion/
+- Andrea Aurelio Napoli, grid and motion: https://tympanus.net/codrops/2026/11/09/au-rel-io/
+- Arnaud Rocca, neutral project pages and reusable motion: https://tympanus.net/codrops/2026/03/31/arnaud-roccas-portfolio-from-a-gsap-powered-motion-system-to-fluid-webgl/
+- https://emilkowal.ski/
+- https://rauno.me/
 
-## Verification limits
+## Verification
 
-Syntax and static structure checks passed. Browser visual and interaction QA was unavailable after browser control stopped because the current URL could not be verified. This remains an explicit verification limit.
+Static checks cover page sections, anchors, local assets, fonts, project links and case-study content. DOM interaction checks run with jsdom and reduced motion, including theme persistence and blocked-storage fallback, menu state, Escape, layout controls, résumé buttons, email copy and clock.
+
+To run interaction checks with a separate jsdom installation:
+
+    node verify-interactions.cjs PATH_TO_JSDOM_INSTALL_DIRECTORY
+
+The interaction harness does not simulate browser rendering. Browser screenshots of the source projects were captured, but browser control subsequently stopped because the current browser URL could not be verified. Visual review of the redesigned site and its animation timing is therefore unverified.
