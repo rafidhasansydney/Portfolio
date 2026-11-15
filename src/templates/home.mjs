@@ -106,7 +106,7 @@ export function renderHome() {
     '</div><div class="project-scrollbar" aria-hidden="true"><span></span></div></div><div class="wrap work-footer"><p>More projects and source code</p>' +
     external(data.github, 'Explore GitHub', 'text-link') +
     '</div></section>' +
-    '<section class="about section-space" id="about"><div class="wrap"><div class="section-top"><span class="label">02 / ABOUT ME</span><span class="label">BEHIND THE PROJECTS</span></div><div class="about-grid"><h2 class="reveal-title">A bit more<br>about me<span class="blue-dot">.</span></h2><div class="about-copy"><p class="large-copy word-reveal">I’m a fourth-year Software Engineering student at Metropolitan University, Sylhet.</p><p class="reveal">I enjoy working through programming problems and understanding why a solution works. Building web applications gives me a way to put that thinking into practice.</p><p class="reveal">I use coding agents alongside my own understanding of the code, review their output and connect development tools where they help the task.</p><p class="reveal">Outside programming, I read books, play games and explore new apps. I’m interested in AI and automation, and I’m also working on game projects.</p><div class="interests reveal"><span>' +
+    '<section class="about section-space" id="about"><div class="wrap"><div class="section-top"><span class="label">02 / ABOUT ME</span><span class="label">BEHIND THE PROJECTS</span></div><div class="about-grid"><h2 class="reveal-title">A bit more<br>about me<span class="blue-dot">.</span></h2><div class="about-copy"><p class="large-copy word-reveal">I’m a fourth-year Software Engineering student at Metropolitan University, Sylhet.</p><p class="reveal">I’ve always been interested in computers and technology. At university, encouragement from my teachers and seeing senior students solve problems and build projects gave that interest a clearer direction.</p><p class="reveal">Taking part in coding contests and practising on coding platforms helped me get more involved in programming. Watching programmers on YouTube, following contest walkthroughs and working through tutorials gave me new ideas to try. I enjoy figuring out why a solution works and learning from the mistakes along the way.</p><p class="reveal">That curiosity also led me to building websites and exploring game development. I like taking an idea and turning it into something people can use or play. Each project gives me a new problem to solve and a chance to improve.</p><p class="reveal">Outside programming, I read books, play games and explore new apps. I’m interested in AI and automation, and I use coding agents in my workflow while reviewing their output and understanding the code.</p><div class="interests reveal"><span>' +
     icon('code') +
     ' Problem solving</span><span>' +
     icon('book') +
@@ -162,7 +162,7 @@ export function renderHome() {
     data.email +
     '"><h2>Say hello<span>.</span></h2>' +
     icon('diagonal') +
-    '</a><div class="contact-content"><p>Have a project in mind or a question about my work?<br>You can reach me by email.</p><div class="contact-email"><a href="mailto:' +
+    '</a><div class="contact-content"><p>Have a project in mind or a question about my work?<br>You can reach me by email or phone.</p><div class="contact-details"><div class="contact-email"><a href="mailto:' +
     data.email +
     '">' +
     data.email +
@@ -170,7 +170,13 @@ export function renderHome() {
     data.email +
     '" aria-label="Copy email address">' +
     icon('copy') +
-    '</button></div></div><div class="contact-links">' +
+    '</button></div><a class="contact-phone" href="tel:+88' +
+    esc(data.phone) +
+    '"><span class="label">PHONE</span><span>' +
+    esc(data.phone) +
+    '</span>' +
+    icon('diagonal') +
+    '</a></div></div><div class="contact-links">' +
     external(data.github, 'GitHub') +
     external(data.facebook, 'Facebook') +
     '<button class="resume-link" data-resume>Résumé ' +

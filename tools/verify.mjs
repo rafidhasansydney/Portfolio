@@ -23,7 +23,7 @@ for (const page of pages) {
   const ids = [...text.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
   assert.equal(ids.length, new Set(ids).size, 'Duplicate IDs in ' + page);
   for (const [, kind, ref] of text.matchAll(/\s(src|href)="([^"]+)"/g)) {
-    if (/^(https?:|mailto:|data:)/.test(ref)) continue;
+    if (/^(https?:|mailto:|tel:|data:)/.test(ref)) continue;
     if (ref.startsWith('#')) {
       assert.ok(
         ids.includes(ref.slice(1)),

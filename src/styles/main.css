@@ -789,6 +789,27 @@ html[data-theme='dark'] .moon-icon {
   line-height: 1.9;
   color: #ffffffc4;
 }
+.contact-details {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.contact-phone {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #fff5e9;
+  font-size: 15px;
+}
+.contact-phone .label {
+  color: #fff5e9b3;
+}
+.contact-phone .icon {
+  width: 16px;
+  height: 16px;
+}
 .contact-email {
   display: flex;
   align-items: center;
